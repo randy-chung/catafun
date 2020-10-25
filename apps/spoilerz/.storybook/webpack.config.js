@@ -74,7 +74,7 @@ module.exports = async ({ config, mode }) => {
   );
 
   // Add a loader for SCSS files -- this wasn't working out of the box for some reason, causing
-  // the storybook build to fail.
+  // the storybook build to fail
   config.module.rules.push({
     test: /\.(s*)css$/,
     loaders: ['style-loader', 'css-loader', 'sass-loader'],
