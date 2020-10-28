@@ -21,12 +21,14 @@ module.exports = async ({ config, mode }) => {
 
   const svgRuleIndex = config.module.rules.findIndex((rule) => {
     const { test } = rule;
-
     return test.toString().startsWith('/\\.(svg|ico');
   });
-  config.module.rules[
-    svgRuleIndex
-  ].test = /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|cur|ani|pdf)(\?.*)?$/;
+
+  if(config.module.rules[svgRuleIndex] !== undefined) {
+    config.module.rules[
+      svgRuleIndex
+    ].test = /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|cur|ani|pdf)(\?.*)?$/;
+  }
 
   config.module.rules.push(
     {
