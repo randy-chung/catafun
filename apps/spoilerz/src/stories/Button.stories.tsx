@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
-import SplButton from './Button';
+import SplButton from '../components/Button';
 
 export default {
     component: SplButton,
@@ -9,8 +9,7 @@ export default {
         // backgroundColor: { control: 'color' },
         label: {
             name: 'label',
-            // type: { name: 'string', required: false },
-            type: 'string',
+            type: { name: 'string', required: false },
             defaultValue: 'Button',
             description: 'This is the text that will appear on the button.'
         },
